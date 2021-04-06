@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/movie_details_root">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/start_guide_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/density_size_medium" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/end_guide_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/density_size_medium" />
+
+
+            <ImageView
+                android:id="@+id/product_details_image"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/product_details_image_height"
+                android:layout_marginTop="@dimen/density_size_small"
+                app:layout_constraintEnd_toStartOf="@id/end_guide_line"
+                app:layout_constraintStart_toEndOf="@id/start_guide_line"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/ic_electronics"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/product_details_discount_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_tag"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@id/product_details_image"
+                app:layout_constraintTop_toTopOf="@id/product_details_image"
+                tools:ignore="ContentDescription,MissingConstraints" />
+
+           <View
+                android:id="@+id/movie_title_divider_bottom"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/density_size_medium"
+                android:background="@color/silverChalice"
+                app:layout_constraintEnd_toStartOf="@id/end_guide_line"
+                app:layout_constraintStart_toEndOf="@id/start_guide_line"
+                app:layout_constraintTop_toBottomOf="@id/product_details_title" />
+
+            <TextView
+                android:id="@+id/product_details_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/density_size_medium"
+                app:layout_constraintEnd_toStartOf="@id/end_guide_line"
+                app:layout_constraintStart_toEndOf="@id/start_guide_line"
+                app:layout_constraintTop_toBottomOf="@id/product_details_image"
+                android:textSize="@dimen/text_size_large"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/product_details_price_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/density_size_medium"
+                android:text="@string/product_details_price"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                app:layout_constraintStart_toEndOf="@id/start_guide_line"
+                app:layout_constraintEnd_toStartOf="@id/end_guide_line"
+                app:layout_constraintTop_toBottomOf="@id/movie_title_divider_bottom" />
+
+            <androidx.constraintlayout.helper.widget.Flow
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/density_size_small"
+                android:layout_marginStart="@dimen/density_size_small"
+                app:flow_horizontalStyle="packed"
+                app:flow_wrapMode="chain"
+                app:flow_horizontalGap="@dimen/density_size_medium"
+                app:flow_horizontalBias="0"
+                app:layout_constraintEnd_toStartOf="@id/end_guide_line"
+                app:layout_constraintStart_toEndOf="@id/start_guide_line"
+                app:layout_constraintTop_toBottomOf="@id/product_details_price_title"
+                app:constraint_referenced_ids="product_details_price, product_details_price_discount"/>
+
+            <TextView
+                android:id="@+id/product_details_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/silverChalice"/>
+
+            <TextView
+                android:id="@+id/product_details_price_discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/silverChalice"
+                tools:ignore="MissingConstraints" />
+
+
+            <TextView
+                android:id="@+id/movie_overview_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/density_size_medium"
+                android:text="@string/product_details_description"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                app:layout_constraintStart_toEndOf="@id/start_guide_line"
+                app:layout_constraintEnd_toStartOf="@id/end_guide_line"
+                app:layout_constraintTop_toBottomOf="@id/product_details_price" />
+
+            <TextView
+                android:id="@+id/product_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/density_size_small"
+                android:layout_marginStart="@dimen/density_size_small"
+                android:textColor="@color/silverChalice"
+                app:layout_constraintEnd_toStartOf="@id/end_guide_line"
+                app:layout_constraintStart_toEndOf="@id/start_guide_line"
+                app:layout_constraintTop_toBottomOf="@id/movie_overview_title"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+  <!--  <include
+        android:id="@+id/movie_details_loading_error"
+        layout="@layout/loading_error_layout"
+        app:layout_constraintTop_toTopOf="parent"/>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
